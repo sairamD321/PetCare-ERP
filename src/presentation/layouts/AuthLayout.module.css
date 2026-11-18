@@ -1,0 +1,136 @@
+/* Welcome screen shared by login, register and forgot password. */
+.root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(380px, 1fr);
+  background: var(--pc-store-bg);
+}
+
+.compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.art {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0 1rem 1rem;
+  border-radius: 28px;
+  background: radial-gradient(ellipse at 58% 62%, #ffca48 0%, #ffc23f 45%, #fcb735 80%);
+}
+
+.compact .art {
+  display: none;
+}
+
+.quote {
+  position: relative;
+  z-index: 2;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.75rem, 4.5vw, 3.5rem) 0;
+  max-width: 34rem;
+  animation: rise 0.7s ease-out both;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--pc-ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.headline {
+  margin: 0 0 1rem;
+  color: var(--pc-ink);
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.headline em {
+  font-style: normal;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(180, 100, 0, 0.25);
+}
+
+.blockquote {
+  margin: 0;
+  max-width: 27rem;
+  font-size: clamp(1.02rem, 1.5vw, 1.2rem);
+  line-height: 1.55;
+  color: #3b2a0a;
+  font-weight: 500;
+}
+
+.sign {
+  margin-top: 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #7a4a05;
+}
+
+.paw {
+  position: absolute;
+  color: #fff;
+  opacity: 0.32;
+}
+
+.p1 { right: 9%; top: 9%; transform: rotate(18deg); }
+.p2 { right: 18%; top: 17%; transform: rotate(-12deg); }
+.p3 { left: 6%; bottom: 14%; transform: rotate(-24deg); }
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem 1.5rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  animation: rise 0.7s ease-out 0.1s both;
+}
+
+.compact .form {
+  padding: 1.5rem;
+  border: 1px solid var(--pc-store-line);
+  border-radius: 20px;
+  background: var(--pc-store-surface);
+  box-shadow: 0 16px 40px rgba(60, 45, 20, 0.1);
+}
+
+.logo {
+  display: block;
+  height: 52px;
+  width: auto;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote, .form { animation: none; }
+}
+
+@media (max-width: $mantine-breakpoint-md) {
+  .root { grid-template-columns: 1fr; }
+  .art { margin: 0.75rem 0.75rem 0; border-radius: 22px; }
+  .quote { padding: 1.75rem 1.5rem 0; }
+  .side { padding: 2rem 1.25rem 1.5rem; }
+  .p1, .p2 { display: none; }
+}

@@ -1,0 +1,119 @@
+/* Product tile on blueprint product grids: compact catalogue typography. */
+
+/* Nunito: rounded and friendly, matching the PetCare logo. Mantine components inside read the variable. */
+.tile {
+  --mantine-font-family: 'Nunito', 'Inter', system-ui, sans-serif;
+  font-family: var(--mantine-font-family);
+}
+
+.info {
+  margin-bottom: 10px;
+}
+
+/* Name, price and details: Lexend, a wide geometric face close to the catalogue look we based this on. */
+.name,
+.price,
+.detail {
+  font-family: 'Lexend', 'Nunito', system-ui, sans-serif;
+}
+
+.name {
+  margin: 0 0 6px;
+  min-height: 42px; /* two lines, so tiles in a row line up */
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #1c1c1c;
+  text-wrap: balance;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Unit chip · divider · rating, then a dashed rule filling the rest of the line. */
+.meta {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.meta::after {
+  content: '';
+  flex: 1;
+  margin-left: -4px;
+  border-bottom: 1px dashed #d0d4dc;
+}
+
+.unit {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 4px;
+  border-radius: 6px;
+  background: #e8eaf5;
+  color: #242f64;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.divider {
+  color: #d0d4dc;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #293142;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.star {
+  margin-right: -2px;
+  color: #12522e;
+}
+
+.count {
+  color: #767c8f;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.detail {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.detailLabel {
+  color: #767c8f;
+  font-weight: 400;
+}
+
+.detailValue {
+  color: #293142;
+  font-weight: 600;
+}
+
+/* Page heading above a product grid ("Product Management"): same face as the product names, bold. */
+.heading {
+  font-family: 'Lexend', 'Nunito', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}

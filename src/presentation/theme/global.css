@@ -1,0 +1,14 @@
+:root {
+  --pc-admin-bg: #f5f7fc;
+  --pc-store-bg: #fbf6ec;
+  --pc-store-surface: #fffdf8;
+  --pc-store-line: #ece3d3;
+  --pc-store-muted: #6f6a60;
+  --pc-ink: #16203a;
+}
+
+body {
+  margin: 0;
+  background: var(--pc-admin-bg);
+  -webkit-font-smoothing: antialiased;
+}
